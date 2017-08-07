@@ -1,17 +1,14 @@
 /*
 Firmware for a segway-style robot using ESP8266.
 Copyright (C) 2017  Sakari Kapanen
-
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
-
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
-
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
@@ -142,7 +139,7 @@ const uint8_t DNS_PORT = 53;
 DNSServer dnsServer;
 
 void pretty_print_config() {
-    Serial.printf(PSTR(
+    Serial.printf_P(PSTR(
             "\n\nESPway current config:\n\n"
             "#define ANGLE_KP %d\n"
             "#define ANGLE_KI %d\n"
@@ -395,6 +392,7 @@ void loop() {
     if (!mpu_online) {
         set_motors(0, 0);
         set_both_eyes(RED);
+        //Serial.printf_P("MPU NOT ONLINE\n");
         return;
     }
 
@@ -620,4 +618,3 @@ void setup() {
     });
     ArduinoOTA.begin();
 }
-

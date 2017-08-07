@@ -45,6 +45,5 @@
 #define ENABLE_BATTERY_CHECK false
 #define ENABLE_BATTERY_CUTOFF false
 
-#define WIFI_SSID "ESPway"
+#define WIFI_SSID "MONOLITH"
 #define WIFI_CHANNEL 1
-
