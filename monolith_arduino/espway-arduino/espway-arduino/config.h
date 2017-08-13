@@ -8,7 +8,7 @@
 #define ANGLE_HIGH_KD ANGLE_KD
 // Velocity PID == the PID controller which regulates target angle to reach
 // the target velocity
-#define VEL_KP 2.0
+#define VEL_KP 1.5
 #define VEL_KI 0.5
 #define VEL_KD 0.002
 
@@ -30,19 +30,19 @@
 #define HIGH_PID_LIMIT 0.2
 #define ROLL_LIMIT 0.5
 
-#define STABLE_ANGLE -0.2
+#define STABLE_ANGLE 0.05
 
 #define GYRO_X_OFFSET -27
 #define GYRO_Y_OFFSET -89
 #define GYRO_Z_OFFSET 14
 
-#define WINDUP_TIMEOUT 500
+#define WINDUP_TIMEOUT 800
 
 // Undervoltage cutoff check
 #define BATTERY_THRESHOLD 7.4
 #define BATTERY_CALIBRATION_FACTOR 102.4
 #define BATTERY_CHECK_INTERVAL 500
-#define ENABLE_BATTERY_CHECK false
+#define ENABLE_BATTERY_CHECK true
 #define ENABLE_BATTERY_CUTOFF false
 
 #define WIFI_SSID "MONOLITH"

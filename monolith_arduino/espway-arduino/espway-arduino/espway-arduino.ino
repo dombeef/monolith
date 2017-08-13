@@ -1,14 +1,17 @@
 /*
 Firmware for a segway-style robot using ESP8266.
 Copyright (C) 2017  Sakari Kapanen
+
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
+
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
+
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
@@ -251,6 +254,7 @@ void send_pid_params(pid_controller_index idx) {
     params[1] = my_config.pid_coeffs_arr[idx].i;
     params[2] = my_config.pid_coeffs_arr[idx].d;
     ws.binaryAll(payload, 14);
+    Serial.println("sent PID params");
 }
 
 void websocket_recv_cb(AsyncWebSocket * server, AsyncWebSocketClient * client,
@@ -271,7 +275,6 @@ void websocket_recv_cb(AsyncWebSocket * server, AsyncWebSocketClient * client,
     pid_controller_index pid_index;
     int32_t *i32_data;
     uint8_t res;
-
     switch (msgtype) {
         case STEERING:
             // Parameters: velocity (int8_t), turn rate (int8_t)
@@ -392,7 +395,6 @@ void loop() {
     if (!mpu_online) {
         set_motors(0, 0);
         set_both_eyes(RED);
-        //Serial.printf_P("MPU NOT ONLINE\n");
         return;
     }
 
@@ -494,7 +496,7 @@ void loop() {
                 FLT_TO_Q16(TRAVEL_SPEED_SMOOTHING));
         } else {
             my_state = FALLEN;
-            set_both_eyes(BLUE);
+            set_both_eyes(LILA);
             travel_speed = 0;
             set_motors(0, 0);
         }
