@@ -235,4 +235,17 @@ F 3 "" H 7950 5050 50  0000 C CNN
 $EndComp
 Text Notes 8050 5350 0    63   ~ 0
 DTR\nRX\nTX\nVC\nCTS\nGND
+Wire Wire Line
+	4750 3900 4650 3900
+Wire Wire Line
+	4750 3750 4750 3900
+Wire Wire Line
+	4750 3800 4900 3800
+Wire Wire Line
+	4900 3300 4550 3300
+Wire Wire Line
+	4550 3300 4550 3750
+Wire Wire Line
+	4550 3750 4750 3750
+Connection ~ 4750 3800
 $EndSCHEMATC
