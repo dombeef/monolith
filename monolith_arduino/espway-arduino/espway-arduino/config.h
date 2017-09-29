@@ -30,7 +30,7 @@
 #define HIGH_PID_LIMIT 0.2
 #define ROLL_LIMIT 0.5
 
-#define STABLE_ANGLE 0.05
+#define STABLE_ANGLE 0.01
 
 #define GYRO_X_OFFSET -27
 #define GYRO_Y_OFFSET -89
@@ -38,12 +38,12 @@
 
 #define WINDUP_TIMEOUT 50000
 
-// Undervoltage cutoff check
-#define BATTERY_THRESHOLD 7.4
-#define BATTERY_CALIBRATION_FACTOR 102.4
+// Undervoltage cutoff check modified for 3.7v battery
+#define BATTERY_THRESHOLD 3.4
+#define BATTERY_CALIBRATION_FACTOR 252
 #define BATTERY_CHECK_INTERVAL 500
 #define ENABLE_BATTERY_CHECK true
-#define ENABLE_BATTERY_CUTOFF false
+#define ENABLE_BATTERY_CUTOFF true
 
 #define WIFI_SSID "MONOLITH"
 #define WIFI_CHANNEL 1

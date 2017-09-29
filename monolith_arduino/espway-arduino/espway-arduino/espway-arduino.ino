@@ -281,6 +281,7 @@ void websocket_recv_cb(AsyncWebSocket * server, AsyncWebSocketClient * client,
             if (data_len != 2) {
                 break;
             }
+            
             signed_data = (int8_t *)payload;
             steering_bias = (FLT_TO_Q16(STEERING_FACTOR) * signed_data[0]) / 128;
             target_speed = (FLT_TO_Q16(SPEED_CONTROL_FACTOR) * signed_data[1]) / 128;
